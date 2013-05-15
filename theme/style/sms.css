@@ -1,0 +1,301 @@
+/*  
+ * meego-handset-sms - Meego Handset SMS application
+ * Copyright (c) 2009, 2010, Intel Corporation.
+ *
+ * This program is licensed under the terms and conditions of the
+ * Apache License, version 2.0.  The full text of the Apache License is at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *  
+ */
+@const COLOR_MSGTEXT: #595959;
+@const COLOR_INBOXMSGTEXTREAD: #464646;
+@const COLOR_TIMESTAMP: #999999;
+@const COLOR_NEWMSGBLUE: #30ace0;
+@const COLOR_TITLEYELLOW: #ffc844;
+@const COLOR_NAME: #FFFFFF;
+
+@const BGCOLOR: #b2b2b2;
+
+@const FONT_LARGE: "Droid Sans" 2.4mm;
+@const FONT_SMALL: "Droid Sans" 1.8mm;
+
+
+MWidgetStyle {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-boxed-percent: 0;
+    background-image: ;
+}
+
+MLabelStyle {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+MTextEditStyle {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#ButtonLabel {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+MAbstractLayoutPolicyStyle {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-spacing: 0;
+    horizontal-spacing: 0;
+}
+
+
+MApplicationPageStyle {
+    vertical-align: top;
+    horizontal-align: center;
+ 
+    padding-left: 0;
+    padding-right: 0;
+ 
+    background-image: ;
+    background-color: $BGCOLOR;
+}
+
+MApplicationPageStyle.Portrait {
+    background-image: ;
+    background-color: $BGCOLOR;
+}
+
+MApplicationPageStyle.Landscape {
+    background-image: ;
+    background-color: $BGCOLOR;
+}
+
+MListStyle {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/***************************
+ * SMS specific properties *
+ ***************************/
+
+#contactItem {
+    background-image: "SMS-inboxmsgs-background-inactive" 0 0 0 0;
+}
+
+#contactItem:pressed {
+    background-image: "SMS-inboxmsgs-background-pressed" 0 0 0 0;
+}
+
+#contactItemName {
+    font: $FONT_LARGE;
+}
+
+#contactItemPhone {
+    font: $FONT_SMALL;
+    color: #656565;
+}
+
+#inboxMenuBar {
+    background-image: "SMS-menuButton-background-inactive" 5 5 5 5;
+}
+
+#inboxMenuBarTitle {
+    font: $FONT_LARGE;
+    color: $COLOR_TITLEYELLOW;
+    padding-left: 70;
+}
+
+#inboxNewmessageButton {
+    margin-top: 25;
+    margin-left: 25;
+    margin-right: 25;
+    margin-bottom: 25;
+}
+
+InboxItemStyle {
+    background-image: "SMS-inboxmsgs-background-inactive" 0 0 0 0;
+}
+
+InboxItemStyle:read {
+    background-image: "SMS-inboxmsgs-background-inactive" 0 0 0 0;
+}
+
+InboxItemStyle:pressed {
+    background-image: "SMS-inboxmsgs-background-pressed" 0 0 0 0;
+}
+
+#inboxEmptyMessage {
+    font: "Droid Sans" 2.4mm;
+    color: #303030;
+    preferred-size: 100% 30%;
+}
+
+#inboxItemSender {
+    font: $FONT_LARGE;
+    color: $COLOR_MSGTEXT;
+}
+
+#inboxItemTimestamp {
+    font: $FONT_SMALL;
+    color: $COLOR_TIMESTAMP;
+}
+
+#inboxItemTimestampNewMessage{
+    font: $FONT_SMALL;
+    color: $COLOR_NEWMSGBLUE;
+}
+
+#inboxItemMessage {
+    font: $FONT_LARGE;
+    color: $COLOR_INBOXMSGTEXTREAD;
+}
+
+#inboxItemNewMessage {
+    font: $FONT_SMALL;
+    color: $COLOR_NEWMSGBLUE;
+}
+
+#inboxViewport {
+    preferred-size: 100% 100%;
+}
+
+#newmessageMenuBar {
+    background-image: "SMS-menuButton-background-inactive" 5 5 5 5;
+}
+
+#newmessageMenuBarTitle {
+    font: $FONT_LARGE;
+    color: $COLOR_NAME;
+    padding-top: 19;
+    padding-left: 70;
+    padding-bottom: 19;
+}
+
+#dialogItem {
+    background-image: "SMS-conversationOutgoing-background-inactive" 0 0 0 0;
+}
+
+#dialogItem:pressed {
+    background-image: "SMS-conversationOutgoing-background-pressed" 0 0 0 0;
+}
+
+#dialogItemIncoming {
+    background-image: "SMS-conversationIncoming-background-inactive" 0 0 0 0;
+}
+
+#dialogItemIncoming:pressed {
+    background-image: "SMS-conversationIncoming-background-pressed" 0 0 0 0;
+}
+
+#dialogItemTimestamp {
+    font: $FONT_SMALL;
+    color: $COLOR_TIMESTAMP;
+}
+
+#dialogItemSending {
+    font: $FONT_SMALL;
+    color: #006600;
+}
+
+#dialogItemFailed {
+    font: $FONT_SMALL;
+    color: #880000;
+}
+
+#dialogItemMessage {
+    font: $FONT_LARGE;
+    color: $COLOR_MSGTEXT;
+}
+
+#contactSearchBar {
+    background-image: meegotouch-container-header-background 10 10 10 10;
+    background-color: #4D4D4D;
+}
+
+#contactNameBar {
+    background-image: "SMS-menuButton-background-inactive" 5 5 5 5;
+}
+
+#dialogName {
+    color: $COLOR_NAME;
+    horizontal-align: left;
+}
+
+#dialogAvatar {
+    horizontal-align: left;
+}
+
+#textEntryBar {
+    background-image: meegotouch-container-content-background 10 10 10 10;
+}
+
+#entryBox {
+}
+
+#dialogOverlay {
+    minimum-size: -1 -1;
+    preferred-size: -1 -1;
+    maximum-size: -1 -1;
+    vertical-align: bottom;
+    horizontal-align: left;
+    offset: 50 -50;
+}
+
+#countdownText {
+    background-color: #FFFFFF;
+    minimum-size: 80 25;
+}
+
+
+#clearButton {
+    font: "Droid Sans" 2.4mm;
+    text-color: #838383;
+    background-image: textbox-delete-up 0 0 0 0;
+    background-color: #FFFFFF;
+    minimum-size: 40 39;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#clearButton:pressed {
+    background-image: textbox-delete-dn 0 0 0 0;
+}
+
+#textSeparator {
+    minimum-size: 3 3;
+    preferred-size: 3 3;
+    background-image: text-line 0 0 0 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#sendButton {
+    background-image: meegotouch-button-background 10 10 10 10;
+}
+

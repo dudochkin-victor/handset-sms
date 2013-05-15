@@ -1,0 +1,13 @@
+Makefile
+plugin/*.so
+plugin/*interface.cpp
+plugin/*interface.h
+sms.pro.user
+smsinit/smsinit
+src/*interface.cpp
+src/*interface.h
+src/gen_*.cpp
+src/gen_*.h
+src/sms
+translations/*.qm
+translations/*.ts

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=SMS
+Icon=icons-Applications-sms
+Exec=sms
+Comment=MeeGo text messaging application
+Terminal=false
+StartupNotify=true

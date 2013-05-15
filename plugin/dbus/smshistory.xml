@@ -1,0 +1,19 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/">
+	<interface name="org.ofono.SmsHistory">
+		<method name="GetSmsHistory">
+			<arg type="a(sqqssii)" direction="out"/>
+                        <annotation name="com.trolltech.QtDBus.QtTypeName.Out0" value="QMailMessageList"/>
+		</method>
+		<method name="SetSmsHistoryRead"/>
+		<signal name="SmsHistoryChanged">
+			<arg type="u"/>
+		</signal>
+		<signal name="SmsStatusChanged">
+			<arg type="s"/>
+			<arg type="q"/>
+			<arg type="i"/>
+		</signal>
+	</interface>
+</node>

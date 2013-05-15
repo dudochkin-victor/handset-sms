@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="duisms-layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="652px" height="1515.242px" viewBox="0 0 652 1515.242" enable-background="new 0 0 652 1515.242"
+	 xml:space="preserve">
+<g id="duisms">
+	
+		<rect x="14" y="15.228" fill="#B2B2B2" stroke="#020202" stroke-width="7" stroke-linejoin="round" width="622" height="1486.015"/>
+	<rect id="SMS-textEntry-background" x="60.5" y="333.348" fill="#464646" stroke="#020202" width="528.979" height="80"/>
+	<g id="SMS-textEntryfield">
+		<g>
+			<path fill="#595959" d="M550.053,396.264c0,0.556-0.449,1-1,1H99.927c-0.552,0-1-0.444-1-1v-45.833c0-0.552,0.448-1,1-1h449.126
+				c0.551,0,1,0.448,1,1V396.264z"/>
+		</g>
+		<g>
+			<path fill="#FFFFFF" d="M100.927,396.764c-0.276,0-0.5-0.224-0.5-0.5v-45.833c0-0.273,0.224-0.5,0.5-0.5h449.126
+				c0.275,0,0.5,0.227,0.5,0.5v45.833c0,0.276-0.225,0.5-0.5,0.5H100.927z"/>
+			<path fill="#2B2B2B" d="M550.053,350.431v45.833H100.927v-45.833H550.053 M550.053,349.431H100.927c-0.552,0-1,0.448-1,1v45.833
+				c0,0.556,0.448,1,1,1h449.126c0.551,0,1-0.444,1-1v-45.833C551.053,349.879,550.604,349.431,550.053,349.431L550.053,349.431z"/>
+		</g>
+		<rect x="100.906" y="350.41" fill="#909090" width="2.125" height="46.328"/>
+		<rect x="100.945" y="396.262" fill="#A5A5A5" width="449.081" height="0.484"/>
+		<rect x="100.93" y="350.423" fill="#909090" width="449.094" height="1.847"/>
+	</g>
+	<g id="SMS-inboxmsgs-background-inactive">
+		<rect x="60.069" y="1234.201" fill="#D6D6D6" width="529.239" height="115"/>
+		<rect x="60" y="1234.571" fill="#FFFFFF" width="529.376" height="114.204"/>
+	</g>
+	<g id="SMS-inboxmsgs-background-pressed">
+		<rect x="60.068" y="1361.701" fill="#D6D6D6" width="529.239" height="115"/>
+		<rect x="60" y="1362.071" fill="#F2F2F2" width="529.376" height="114.204"/>
+	</g>
+	<g id="SMS-conversationIncoming-background-pressed">
+		<rect x="60.068" y="1031.701" fill="#D6D6D6" width="529.239" height="115"/>
+		<rect x="60" y="1032.071" fill="#F2F2F2" width="529.376" height="114.204"/>
+	</g>
+	<g id="SMS-conversationIncoming-background-inactive">
+		<rect x="60.069" y="904.201" fill="#D6D6D6" width="529.239" height="115"/>
+		<rect x="60" y="904.571" fill="#F9F9F9" width="529.376" height="114.204"/>
+	</g>
+	<g id="SMS-conversationOutgoing-background-pressed">
+		<rect x="60" y="729.201" fill="#D6D6D6" width="529.3" height="115"/>
+		<rect x="60" y="729.571" fill="#E3E5E5" width="529.3" height="114.204"/>
+		<rect x="60" y="729.555" fill="#FFFFFF" width="529.3" height="0.375"/>
+	</g>
+	<g id="SMS-conversationOutgoing-background-inactive">
+		<rect x="60" y="603.201" fill="#D6D6D6" width="529.3" height="115"/>
+		<rect x="60" y="603.571" fill="#F0F2F2" width="529.3" height="114.204"/>
+		<rect x="60" y="603.555" fill="#FFFFFF" width="529.3" height="0.375"/>
+	</g>
+	<g id="SMS-menuButton-background-inactive">
+		<g>
+			
+				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="284.5986" y1="2120.2422" x2="284.5985" y2="2029.9121" gradientTransform="matrix(1 0 0 -1 -175.5 2349.9844)">
+				<stop  offset="0" style="stop-color:#333333"/>
+				<stop  offset="1" style="stop-color:#313131"/>
+			</linearGradient>
+			<rect x="60.598" y="229.742" fill="url(#SVGID_1_)" width="97" height="90.33"/>
+			<g>
+				<path fill="#020202" d="M157.098,230.242v89.33h-96v-89.33H157.098 M158.098,229.242h-98v91.33h98V229.242L158.098,229.242z"/>
+			</g>
+		</g>
+		<rect x="60.701" y="229.852" fill="#3F3F3F" width="1.219" height="90.1"/>
+		<rect x="156.174" y="229.921" fill="#3F3F3F" width="1.218" height="90.031"/>
+		<rect x="60.701" y="229.847" fill="#3F3F3F" width="96.562" height="1.219"/>
+		<rect x="60.717" y="318.756" fill="#3F3F3F" width="96.658" height="1.218"/>
+	</g>
+	<g id="SMS-menuButton-background-pressed">
+		<g>
+			<rect x="160.598" y="229.742" fill="#FFC844" width="97" height="90.33"/>
+			<g>
+				<path fill="#020202" d="M257.098,230.242v89.33h-96v-89.33H257.098 M258.098,229.242h-98v91.33h98V229.242L258.098,229.242z"/>
+			</g>
+		</g>
+		<rect x="160.701" y="229.852" fill="#DBAF42" width="1.219" height="90.1"/>
+		<rect x="256.174" y="229.921" fill="#DBAF42" width="1.218" height="90.031"/>
+		<rect x="160.701" y="229.847" fill="#DBAF42" width="96.562" height="1.219"/>
+		<rect x="160.717" y="318.756" fill="#DBAF42" width="96.658" height="1.218"/>
+	</g>
+	<g id="SMS-secondaryButton-background-inactive">
+		<g>
+			
+				<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="615.9316" y1="2120.2422" x2="615.9316" y2="2029.9121" gradientTransform="matrix(1 0 0 -1 -175.5 2349.9844)">
+				<stop  offset="0" style="stop-color:#585858"/>
+				<stop  offset="1" style="stop-color:#565656"/>
+			</linearGradient>
+			<rect x="391.932" y="229.742" fill="url(#SVGID_2_)" width="96.999" height="90.33"/>
+			<g>
+				<path fill="#020202" d="M488.432,230.242v89.33h-96v-89.33H488.432 M489.432,229.242h-98v91.33h98V229.242L489.432,229.242z"/>
+			</g>
+		</g>
+		<rect x="392.035" y="229.852" fill="#6E6E6E" width="1.219" height="90.1"/>
+		<rect x="487.508" y="229.921" fill="#6E6E6E" width="1.217" height="90.031"/>
+		<rect x="392.035" y="229.847" fill="#6E6E6E" width="96.561" height="1.219"/>
+		<rect x="392.051" y="318.756" fill="#6E6E6E" width="96.658" height="1.218"/>
+	</g>
+	<g id="SMS-secondaryButton-background-pressed">
+		<g>
+			<rect x="491.932" y="229.742" fill="#FFC844" width="97" height="90.33"/>
+			<g>
+				<path fill="#020202" d="M588.432,230.242v89.33h-96v-89.33H588.432 M589.432,229.242h-98v91.33h98V229.242L589.432,229.242z"/>
+			</g>
+		</g>
+		<rect x="492.035" y="229.852" fill="#DBAF42" width="1.219" height="90.1"/>
+		<rect x="587.508" y="229.921" fill="#DBAF42" width="1.217" height="90.031"/>
+		<rect x="492.035" y="229.847" fill="#DBAF42" width="96.561" height="1.219"/>
+		<rect x="492.051" y="318.756" fill="#DBAF42" width="96.658" height="1.218"/>
+	</g>
+	
+		<linearGradient id="SMS-listedgeGradient_1_" gradientUnits="userSpaceOnUse" x1="499.1777" y1="1761.3057" x2="499.1777" y2="1833.3057" gradientTransform="matrix(1 0 0 -1 -175.5 2349.9844)">
+		<stop  offset="0.0254" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		<stop  offset="0.0759" style="stop-color:#E8E8E8;stop-opacity:0.0155"/>
+		<stop  offset="0.223" style="stop-color:#ACACAC;stop-opacity:0.0608"/>
+		<stop  offset="0.3692" style="stop-color:#777777;stop-opacity:0.1058"/>
+		<stop  offset="0.511" style="stop-color:#4C4C4C;stop-opacity:0.1495"/>
+		<stop  offset="0.6476" style="stop-color:#2B2B2B;stop-opacity:0.1915"/>
+		<stop  offset="0.7775" style="stop-color:#131313;stop-opacity:0.2315"/>
+		<stop  offset="0.898" style="stop-color:#050505;stop-opacity:0.2686"/>
+		<stop  offset="1" style="stop-color:#000000;stop-opacity:0.3"/>
+	</linearGradient>
+	<rect id="SMS-listedgeGradient" x="59.028" y="516.679" fill="url(#SMS-listedgeGradient_1_)" width="529.3" height="72"/>
+	<g id="SMS-peoplethumb-background">
+		<path opacity="0.8" enable-background="new    " d="M300.411,249.017h50.905c0.578,0,1.048,0.473,1.048,1.047v49.909
+			c0,0.576-0.47,1.044-1.048,1.044h-50.905c-0.578,0-1.047-0.468-1.047-1.044v-49.909
+			C299.364,249.49,299.833,249.017,300.411,249.017z"/>
+		<path fill="#FFFFFF" d="M300.892,249.517h49.945c0.567,0,1.027,0.463,1.027,1.027v48.949c0,0.564-0.46,1.024-1.027,1.024h-49.945
+			c-0.567,0-1.027-0.459-1.027-1.024v-48.949C299.864,249.98,300.325,249.517,300.892,249.517z"/>
+		<path fill="#E7E7E7" d="M301.372,250.017h48.983c0.557,0,1.009,0.454,1.009,1.007v47.989c0,0.553-0.452,1.004-1.009,1.004h-48.983
+			c-0.556,0-1.008-0.451-1.008-1.004v-47.989C300.364,250.471,300.816,250.017,301.372,250.017z"/>
+	</g>
+</g>
+<text id="SMSdocname" transform="matrix(1 0 0 1 267.0264 117.3193)" font-family="'DroidSans-Bold'" font-size="60">SMS</text>
+</svg>

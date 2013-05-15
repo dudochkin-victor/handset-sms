@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.meego.sms
+Exec=/usr/bin/sms

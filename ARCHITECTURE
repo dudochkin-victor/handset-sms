@@ -1,0 +1,163 @@
+__Overview__
+
+meego-handset-sms is a reference text messaging application for MeeGo Handset. It
+supports the following features:
+
+* send and receive SMS
+* persistent message history
+* draft messages
+* associating phone numbers with name/avatar stored in contacts (meego-handset-people)
+* pop-up notifications of incoming SMS
+* Cell Broadcast messages
+* SMS delivery reports
+
+SMS uses the following components:
+
+* MTF/libmeegotouch - touch based UI, built on top of QGraphics
+* libseaside - MeeGo utility library for contacts, built on top of Qt-Contacts
+* Qt-Contacts - Qt-Mobility contacts API
+* Ofono - telephony stack
+* smshistory - plugin to Ofono that provides temporary message storage
+* QMF - message storage
+
+
+     .-----------------.
+     | SMS application |
+     |                 |
+     '-----------------'
+        ^          |
+        |          |
+        |          |
+.---------------.  |              .----------------.
+|    QMF        |  | SendMessage()|    ofonod      |
+| messageserver |  '------------->|                |    .-----------.
+|   ............|                 |.............   |    | modem or  |
+|   . libsms.so | GetSmsHistory() | smshistory .   |----| phonesim  |
+|   .  plugin   |<----------------|  plugin    .   |    '-----------'
+'---------------'                 '----------------'
+  |
+  |
+.---------------.
+| sqlite3 db    |
+'---------------'
+
+meego-handset-sms consists of three components, the "sms" application, the QMF
+plugin libsms.so, and the "smsinit" binary. Operation assumes that the QMF
+"messageserver" daemon is running persistently from system startup. This is so that
+incoming messages will always be spooled to the QMF data storage, and MTF
+notifications for incoming messages can be generated, whether the SMS application
+is running or not.
+
+Note that this is NOT how QMF messageserver is normally run. Normally the
+messageserver daemon is spawned on-demand when a client email app is started.
+Additionally, an account must be configured in QMF to use the sms plugin, before
+this can work. The binary "smsinit" handles both configuration of the initial
+account, as well as launching messageserver. It installs a file to
+/etc/xdg/autostart/smsinit.desktop, so it is launched as startup.
+
+Layout of the source tree:
+
+src/ - SMS application source
+plugin/ - QMF plugin source
+smsinit/ - smsinit source
+theme/ - css stylesheet and theme assets
+translations/ - "engineering english" translations
+
+There is a separate repo, meego-handset-sms-translations, that provides
+the actual localization files.
+
+__Ofono__
+
+Ofono's SMS API is still in the process of being designed, so some parts are not
+currently used. Additionally, the IncomingMessage() signal is not used, because
+this API does not expose message status (sent, failed, delivered, etc). The
+smshistory plugin is used instead (see below). Ofono exports a DBus interface for
+SMS under the name "org.ofono.MessageManager".
+
+Methods:
+
+a{sv} GetProperties() - used to get SMS stack settings (delivery reports, SMSC)
+SetProperty(s, v) - used to set SMS stack settings (delivery reports, SMSC)
+o SendMessage(s,s) - used to send messages
+a(oa{sv}) GetMessages() - NOT USED, new to the API
+
+Signals:
+
+PropertyChanged(s, v) - NOT USED, notify that a property changed
+IncomingMessage(s, a{sv}) - NOT USED, incoming class 1 SMS
+ImmediateMessage(s, a{sv}) - NOT USED, incoming class 0 SMS
+MessageAdded(o, a{sv}) - NOT USED, new to the API
+MessageRemoved(o) - NOT USED, new to the API
+
+_Smshistory_
+
+smshistory is a plugin to Ofono that provides temporary storage of SMS messages,
+both incoming and outgoing. It is only meant to be temporary storage as there is a
+hard limit to the number of messages that can stored before old ones will be
+overwritten. It is analogous to the callhistory plugin used by dialer. It exports
+the DBus interface "org.ofono.SmsHistory".
+
+Methods:
+
+a(sqqssii) GetSmsHistory() - returns an array of SMS message "structs"
+SetSmsHistoryRead() - called after GetSmsHistory() to clear the history
+
+Signals:
+
+SmsHistoryChanged(u) - notifies the client that there are new messages
+SmsStatusChanged(s, q, i) - notifies that the status of a message has changed
+
+_phonesim_
+
+Phonesim is a modem simulator that can be used with Ofono to simulate calls and
+SMS. It has a Qt based GUI and listens on a tcp socket for a connection from Ofono.
+Ofono can be configured to use phonesim in /etc/ofono/modem.conf.
+
+__QMF__
+
+QMF (Qt Messaging Framework) is a library for unified messaging (email, SMS, MMS,
+IM). Unfortunately, it does not provide out of the box support for anything
+other than email, and its architecture has issues with SMS/MMS and IM. It can be
+extended by plugins. Examples of functionality provided by plugins are SMTP, POP,
+IMAP, and Sqlite based message storage.
+
+It is used by the SMS app for receiving and storing messages, but not sending. The
+QMF plugin libsms.so is installed by meego-handset-sms, and spools messages from
+smshistory to the QMF message store. It also provides MTF notifications for
+incoming messages and cell broadcast messages. The design of this plugin is
+somewhat of a kludge due to problems with the QMF architecture, and a better
+long-term solution needs to be found.
+
+These are the issues with using QMF for SMS:
+
+* no support for asynchronous "always-on" reception of messages
+* no support for sending/receiving messages without an account configured
+* no SMS specific metadata fields
+
+__Qt-Messaging__
+
+Qt-Messaging is a higher level API that is part of Qt Mobility. On MeeGo and linux
+platforms, it uses QMF as its backend. Its API is almost identical to the QMF,
+however it is not currently being used because it does not provide access to QMF's
+"custom fields".  These custom fields are needed as a work-around to the
+lack of SMS metadata fields for storing the message status flags.
+
+__Architecture Gaps/TODOs__
+
+Eventually, MeeGo SMS applications need to use the Qt-Messaging API instead of
+talking directly to Ofono and QMF. For this to be possible the following needs
+to be happen:
+
+* finalization of the Ofono SMS API
+* address the architectural issues in QMF and/or Qt-Messaging APIs
+* implementation of a QMF plugin or Qt-Messaging backend that connects to Ofono
+
+_Phone number matching_
+
+Phone numbers on incoming messages can be in many different formats, such as
+international or national. The phone number an SMS is sent to may not be identical
+to the one the reply is received from. Identifying numbers that are semantically
+equivalent is complex, and varies based on country and carrier.
+
+Emma Kuo <emma.kuo@intel.com>
+Nov 4, 2010

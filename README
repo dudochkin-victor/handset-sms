@@ -1,0 +1,94 @@
+meego-handset-sms - MeeGo Handset SMS application
+Copyright (C) 2010, Intel Corporation.
+
+meego-handset-sms is an SMS application based on Qt 4.7 and libmeegotouch
+It depends on:
+
+ - libmeegotouch
+ - Ofono and smshistory, for telephony services
+ - libseaside and Qt-Mobility, for contacts data
+ - Qt Messaging Framework (QMF), for storage of SMS messages
+
+If you are building from source on MeeGo, the packages you need are:
+
+ - gcc-c++
+ - make
+ - libqt-devel
+ - libmeegotouch-devel
+ - meegotouch-theme-meego
+ - ofono
+ - ofono-test
+ - smshistory
+ - phonesim
+ - libseaside-devel
+ - qt-mobility-devel
+ - qmf-devel
+
+-----------------------------------------------------------------------------
+ Build
+-----------------------------------------------------------------------------
+$ qmake
+$ make
+
+-----------------------------------------------------------------------------
+ Install
+-----------------------------------------------------------------------------
+$ sudo make install
+
+-----------------------------------------------------------------------------
+ Running
+-----------------------------------------------------------------------------
+The following assumes ofono is already running. For more detailed
+usage see below.
+
+$ smsinit
+$ sms
+
+-----------------------------------------------------------------------------
+ Running phonesim and ofono
+-----------------------------------------------------------------------------
+
+You must be running phonesim to simulate incoming SMS messages. It
+is possible to run phonesim on a desktop computer and have ofono on
+the mobile device connect to it over tcp/ip. In this example, the
+desktop computer is address 192.168.0.1.
+
+------[on mobile device]-------
+
+1. Enable phonesim driver. Add the following section to
+   /etc/ofono/modem.conf:
+
+[phonesim]
+Driver=phonesim
+Address=192.168.0.1
+Port=12345
+
+------[on desktop system]-------
+ 
+2. Start phonesim in gui mode.
+
+$ phonesim -p 12345 -gui /usr/share/phonesim/default.xml
+
+------[on mobile device]-------
+
+3. Reboot the mobile device. If the phonesim window does not appear
+on the desktop, you may need to start ofono manually using the
+commands below:
+
+    3a. Start ofono (as root):
+    
+    $ ofonod -n -d '*'
+    
+    3b. Tell ofono to enable the modem:
+    
+    $ /usr/lib/ofono/test/enable-modem
+    $ /usr/lib/ofono/test/online-modem
+
+Online-modem must be run a few seconds after enable-modem, or the
+SMS interface will not be available.
+
+Once the phonesim window appears, there will be an "SMS" tab from
+which you can simulate an incoming SMS. You can start sms now and it
+will be able to send and receive messages through ofono.
+
+
